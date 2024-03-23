@@ -1,0 +1,19 @@
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="{ 'active': i === 0 }">
+      <img [src]="image.src" class="d-block w-100" alt="{{ image.title }}">
+      <div class="carousel-caption">
+        <h5>{{ image.title }}</h5>
+        <p>{{ image.description }}</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

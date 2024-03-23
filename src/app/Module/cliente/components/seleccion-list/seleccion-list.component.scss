@@ -1,0 +1,60 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #fd7e14;
+    color: white;
+    font-weight: bold;
+}
+
+.list-group-item {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #212529;
+}
+
+.btn-primary {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.btn-primary:hover {
+    background-color: #faa563;
+    border-color: #faa563;
+}
+
+.btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+/* Estilos para la ventana flotante */
+.ventana-flotante {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000; /* Asegura que esté encima de otras capas */
+  }
+  
+  .ventana-contenido {
+    /* Estilos para el contenido de la ventana */
+  }
+  
+
+  

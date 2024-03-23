@@ -1,0 +1,27 @@
+<!-- componente-padre.component.html -->
+<div class="container mt-4">
+  <h2>Reservar Mesa</h2>
+  <div id="mesas" class="mb-3">
+    <!-- Mesas se generarán dinámicamente aquí -->
+  </div>
+</div>
+
+<div class="ventana-flotante" *ngIf="ventanaAbierta">
+  <div class="ventana-contenido">
+    <h2>Reservar Mesa</h2>
+    <div class="mb-3">
+      <label for="numberGuests" class="form-label">Número de Comensales</label>
+      <input type="number" id="numberGuests" class="form-control" #numComensales>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Fecha</label>
+      <input type="date" id="date" class="form-control" #fecha>
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Hora</label>
+      <input type="time" id="time" class="form-control" #hora>
+    </div>
+    <button class="btn btn-primary" (click)="reservar(numComensales.value, fecha.value, hora.value)">Reservar</button>
+    <button class="btn btn-secondary" (click)="cerrarVentana()">X</button>
+  </div>
+</div>

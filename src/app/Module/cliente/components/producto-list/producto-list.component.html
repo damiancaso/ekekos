@@ -1,0 +1,54 @@
+<body>   
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQlHSzD4dJwGmCKo41I5mRs0tY1sLiv3r18A&usqp=CAU" class="card-img-top" alt="Laptop Dell XPS 13">
+            <div class="card-body">
+              <h5 class="card-title">Laptop Dell XPS 13</h5>
+              <p class="card-text">S/. 7.999</p>
+              <!-- <a routerLink="/dpro" class="btn btn-primary">Ver más</a> -->
+              <button class="btn btn-secondary" (click)="abrirVentana3()">Reservar Mesa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- <app-producto-detalles></app-producto-detalles> -->
+  <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <div>
+    <div class="container mt-4">
+      <div id="Detalles" class="mb-3">
+      </div>
+    </div>
+    
+    <div class="ventana-flotante" *ngIf="ventanaAbierta3">
+      <div class="ventana-contenido">
+        <div class="mb-3">
+          <div class="card" style="width: 18rem;">
+            <img src="https://www.shutterstock.com/image-photo/pollo-la-brasa-con-papas-260nw-1832024746.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">Pollo a la brasa preparada a mano</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">- papas</li>
+              <li class="list-group-item">-pollo</li>
+              <li class="list-group-item">-ensalada</li>
+            </ul>
+            <div class="card-body">
+              <!-- <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a> -->
+            </div>
+          
+  
+          </div>
+        </div>
+        <button routerLink="/pasarela" class="btn btn-primary">Reservar</button>
+        <button class="btn btn-secondary" (click)="cerrarVentana3()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  </body>
+  
+  

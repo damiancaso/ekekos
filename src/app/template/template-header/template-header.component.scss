@@ -1,0 +1,60 @@
+.navbar {
+    
+    // Personalizar el color de fondo
+    background-color: #f8f9fa00;
+  
+    // Alinear elementos en el header
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    // Padding para separar el contenido de los bordes
+    padding: 10px 20px;
+  
+    // Estilos para el logo
+    .navbar-brand {
+      // Alinear verticalmente el logo
+      display: flex;
+      align-items: center;
+  
+      // Márgenes para separar el logo de otros elementos
+      margin-right: auto;
+    }
+  
+    // Estilos para el campo de búsqueda
+    .form-inline {
+      // Alinear verticalmente el campo de búsqueda
+      display: flex;
+      align-items: center;
+      flex-grow: 1; // Permitir que el campo de búsqueda ocupe el espacio disponible
+      margin: 0 10px;
+      flex: 1; // Márgenes a los lados del campo de búsqueda
+    }
+  
+    // Estilos para los enlaces de usuario y carrito de compras
+    .navbar-nav {
+      // Alinear verticalmente los elementos de la lista
+      display: flex;
+      align-items: center;
+  
+      // Estilos para cada elemento de la lista
+      .nav-item {
+        // Estilos para los enlaces
+        .nav-link {
+          // Personalizar el color de los enlaces
+          color: #333;
+  
+          // Estilos al pasar el ratón sobre los enlaces
+          &:hover {
+            color: #007bff;
+          }
+  
+          // Márgenes para separar los elementos de la lista
+          & + .nav-link {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  

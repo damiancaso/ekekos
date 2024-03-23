@@ -1,0 +1,33 @@
+.card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .card-img-top {
+    height: 200px; // Ajusta la altura de la imagen según sea necesario
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+  
+  .card:hover {
+    transform: rotateY(20deg);
+  }
+  

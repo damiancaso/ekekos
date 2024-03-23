@@ -1,0 +1,29 @@
+<div>
+    <app-template-header></app-template-header>
+
+</div>
+
+<div class="container">
+    <h1 class="mt-5"></h1>
+    <nav class="mb-4">
+        
+    </nav>
+        <!-- Aquí puedes agregar tu carrusel -->
+  
+    <div class="row">
+        <div *ngFor="let producto of productos" class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img [src]="producto.urlImagen" [alt]="producto.nombre" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="card-title">{{ producto.nombre }}</h2>
+                    <p class="card-text">\${{ producto.precio.toFixed(2) }}</p>
+                    <button class="btn btn-primary btn-block" (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <app-template-footer></app-template-footer>
+</div>
