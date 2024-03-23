@@ -1,35 +1,66 @@
 <form>
-    <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+    <h2 class="fw-bold mb-2 text-uppercase">Registro</h2>
     <p class="text-bold-50 mb-5">¡Por favor, completa el formulario para registrarte!</p>
 
-    <!-- Nombre input -->
+   <div class="form-outline mb-4" >
+    <label for="">Tipo Docunento</label>
+    <select class="from-select">
+        <option value="1">DNI</option>
+        
+    </select>
+   </div>
+
     <div class="form-outline mb-4">
-        <input type="text" id="form3Example1" class="form-control" />
-        <label class="form-label" for="form3Example1">Nombre</label>
+        <input [(ngModel)]="persona.dni" name="dni" type="text" id="txtNombres" class="form-control" />
+        <label class="form-label" for="txtNombres">N° Documento</label>
+        <button type="button" (click)="buscarDni(persona.dni)">Buscar</button>
     </div>
 
-    <!-- Email input -->
     <div class="form-outline mb-4">
-        <input type="email" id="form3Example3" class="form-control" />
-        <label class="form-label" for="form3Example3">Email</label>
+        <input [(ngModel)]="persona.nombres" name="nombre" type="text" id="formNombre" class="form-control" />
+        <label class="form-label" for="formNombre">Nombre</label>
     </div>
 
-    <!-- Contraseña input -->
     <div class="form-outline mb-4">
-        <input type="password" id="form3Example4" class="form-control" />
-        <label class="form-label" for="form3Example4">Contraseña</label>
+        <input [(ngModel)]="persona.apellidoPaterno" name="email" type="email" id="formEmail" class="form-control" />
+        <label class="form-label" for="formEmail">APellido Paterno</label>
     </div>
 
-    <!-- Confirmar Contraseña input -->
     <div class="form-outline mb-4">
-        <input type="password" id="form3Example5" class="form-control" />
-        <label class="form-label" for="form3Example5">Confirmar Contraseña</label>
+        <input [(ngModel)]="persona.apellidoMaterno" name="apellidoMaterno" id="apellidoMaterno"  type="text"  class="form-control" />
+        <label class="form-label" for="formContrasena">Apellido Materno</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="genero">genero</label>
+        <select name="" id="">
+            <option value="1">masculino</option>
+        </select>
+    </div>
+    
+    <div class="form-outline mb-4">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento" class="form-control" />
+    </div>
+          
+    <div class="form-outline mb-4">
+        
+        <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control" required #emailField="ngModel">
+        <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="text-danger">
+            
+        </div>
+        <label for="email">Email:</label><br>
+    </div>  
+
+    <div class="form-outline mb-4">
+        <input name="telefono" type="text" id="telefono" class="form-control" />
+        <label class="form-label" for="telefoono">telefono</label>
     </div>
 
     <div class="text-center text-lg-start mt-4 pt-2">
-        <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+        <button (click)="guardarFechaEnSQLServer()" type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
         <p class="small fw-bold mt-2 pt-1 mb-0">¿Ya tienes una cuenta? <a href="#"
-                class="link-danger">Login</a></p>
+                class="link-danger">Iniciar sesión</a></p>
     </div>
 </form>
