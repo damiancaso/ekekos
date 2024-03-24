@@ -1,66 +1,71 @@
-<form>
+<form [formGroup]="myForm">
     <h2 class="fw-bold mb-2 text-uppercase">Registro</h2>
     <p class="text-bold-50 mb-5">¡Por favor, completa el formulario para registrarte!</p>
-
-   <div class="form-outline mb-4" >
-    <label for="">Tipo Docunento</label>
-    <select class="from-select">
-        <option value="1">DNI</option>
-        
-    </select>
-   </div>
-
+    
     <div class="form-outline mb-4">
-        <input [(ngModel)]="persona.dni" name="dni" type="text" id="txtNombres" class="form-control" />
-        <label class="form-label" for="txtNombres">N° Documento</label>
-        <button type="button" (click)="buscarDni(persona.dni)">Buscar</button>
-    </div>
-
-    <div class="form-outline mb-4">
-        <input [(ngModel)]="persona.nombres" name="nombre" type="text" id="formNombre" class="form-control" />
-        <label class="form-label" for="formNombre">Nombre</label>
-    </div>
-
-    <div class="form-outline mb-4">
-        <input [(ngModel)]="persona.apellidoPaterno" name="email" type="email" id="formEmail" class="form-control" />
-        <label class="form-label" for="formEmail">APellido Paterno</label>
-    </div>
-
-    <div class="form-outline mb-4">
-        <input [(ngModel)]="persona.apellidoMaterno" name="apellidoMaterno" id="apellidoMaterno"  type="text"  class="form-control" />
-        <label class="form-label" for="formContrasena">Apellido Materno</label>
-    </div>
-
-    <div class="form-outline mb-4">
-        <label class="form-label" for="genero">genero</label>
-        <select name="" id="">
-            <option value="1">masculino</option>
-        </select>
+      <label for="IdPersonTipoDocumento">Tipo Documento</label>
+      <select class="from-select" formControlName="IdPersonTipoDocumento" id="IdPersonTipoDocumento">
+        <option  value="1">DNI</option>
+      </select>
     </div>
     
     <div class="form-outline mb-4">
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento" class="form-control" />
+      <input [(ngModel)]="persona.dni" type="text" formControlName="NroDocumento" id="NroDocumento" class="form-control" />
+      <label class="form-label" for="NroDocumento">N° Documento</label>
+      <button type="button" (click)="buscarDni(persona.dni)">Buscar</button>
     </div>
-          
+    
     <div class="form-outline mb-4">
-        
-        <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control" required #emailField="ngModel">
-        <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="text-danger">
+      <input  [(ngModel)]="persona.nombres" formControlName="Nombre"   type="text" id="Nombre" class="form-control"  />
+      <label class="form-label" for="Nombre">Nombre</label>
+    </div>
+  
+    <div class="form-outline mb-4">
+      <input  [(ngModel)]="persona.apellidoPaterno" formControlName="ApPaterno" type="text" id="ApPaterno" class="form-control" />
+      <label class="form-label" for="ApPaterno">Apellido Paterno</label>
+    </div>
+    
+    <div class="form-outline mb-4">
+      <input  [(ngModel)]="persona.apellidoMaterno" formControlName="ApMaterno" type="text" id="ApMaterno" class="form-control" />
+      <label class="form-label" for="ApMaterno">Apellido Materno</label>
+    </div>
+    <!-- <div class="form-outline mb-4">
+        <label formControlname="IdGenero" class="form-label" for="genero">genero</label>
+        <select class="from-select">
+            <option *ngFor="let d of personaGenero" [value]="d.IdGenero">
+            {{d.Nombre}}
+            </option>
+        </select>
+    </div> -->
+    <div class="form-outline mb-4">
+        <label  class="form-label" for="genero">genero</label>
+        <select formControlname="IdGenero" class="from-select" id="IdGenero">
+            <option value="1" >Masculino</option>
+            <option value="2" >Femenino</option>
             
-        </div>
-        <label for="email">Email:</label><br>
-    </div>  
-
+        </select>
+    </div>
     <div class="form-outline mb-4">
-        <input name="telefono" type="text" id="telefono" class="form-control" />
-        <label class="form-label" for="telefoono">telefono</label>
+        <input formControlName="fechaNacimiento" type="date" id="fechaNacimiento" name="fechaNacimiento" [value]="formatFecha()" class="form-control" />
+        <br>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
     </div>
-
+    
+    <div class="form-outline mb-4">
+      <input formControlName="Email" type="email" id="Email" class="form-control" />
+      <label class="form-label" for="Email">Email</label>
+    </div>
+    
+    <div class="form-outline mb-4">
+      <input formControlName="Celular" type="text" id="Celular" class="form-control" />
+      <label class="form-label" for="Celular">Teléfono</label>
+    </div>
+    
     <div class="text-center text-lg-start mt-4 pt-2">
-        <button (click)="guardarFechaEnSQLServer()" type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
-        <p class="small fw-bold mt-2 pt-1 mb-0">¿Ya tienes una cuenta? <a href="#"
-                class="link-danger">Iniciar sesión</a></p>
+      <button (click)="guardar()" type="button" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
+      <p class="small fw-bold mt-2 pt-1 mb-0">¿Ya tienes una cuenta? <a href="#"
+              class="link-danger">Iniciar sesión</a></p>
     </div>
-</form>
+  </form>
+  
